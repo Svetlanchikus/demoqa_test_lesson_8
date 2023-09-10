@@ -46,53 +46,68 @@ public class StudentRegistrationFormPage {
         return this;
     }
 
-    public StudentRegistrationFormPage setRequiredFields(String firstName,
-                                                         String lastName,
-                                                         String gender,
-                                                         String number,
-                                                         String day,
-                                                         String month,
-                                                         String year) {
-        firstNameInput.setValue(firstName);
-        lastNameInput.setValue(lastName);
-        genderWrapper.$(byText(gender)).click();
-        userNumberInput.setValue(number);
-        birthDateInput.click();
-        calendar.setDate(day, month, year);
-
+    public StudentRegistrationFormPage setFirstName(String value) {
+        firstNameInput.setValue(value);
         return this;
     }
 
-    public StudentRegistrationFormPage setAllFields(String firstName,
-                                                    String lastName,
-                                                    String email,
-                                                    String gender,
-                                                    String number,
-                                                    String day,
-                                                    String month,
-                                                    String year,
-                                                    String subjects,
-                                                    String hobbies,
-                                                    String photo,
-                                                    String address,
-                                                    String selectState,
-                                                    String selectCity) {
-        firstNameInput.setValue(firstName);
-        lastNameInput.setValue(lastName);
-        userEmailInput.setValue(email);
-        genderWrapper.$(byText(gender)).click();
-        userNumberInput.setValue(number);
-        birthDateInput.click();
-        calendar.setDate(day, month, year);
-        subjectsInput.setValue(subjects).pressEnter();
-        hobbiesWrapper.$(byText(hobbies)).click();
-        uploadPicture.uploadFromClasspath(photo);
-        currentAddress.setValue(address);
-        stateField.click();
-        stateCityWrapper.$(byText(selectState)).click();
-        cityField.click();
-        stateCityWrapper.$(byText(selectCity)).click();
+    public StudentRegistrationFormPage setLastName(String value) {
+        lastNameInput.setValue(value);
+        return this;
+    }
 
+    public StudentRegistrationFormPage setEmail(String value) {
+        userEmailInput.setValue(value);
+        return this;
+    }
+
+    public StudentRegistrationFormPage setGender(String value) {
+        genderWrapper.$(byText(value)).click();
+        return this;
+    }
+
+    public StudentRegistrationFormPage setNumber(String value) {
+        userNumberInput.setValue(value);
+        return this;
+    }
+
+    public StudentRegistrationFormPage setBirthDate(String valueDay,
+                                                    String valueMonth,
+                                                    String valueYear) {
+        birthDateInput.click();
+        calendar.setDate(valueDay, valueMonth, valueYear);
+        return this;
+    }
+
+    public StudentRegistrationFormPage setSubjects(String value) {
+        subjectsInput.setValue(value).pressEnter();
+        return this;
+    }
+
+    public StudentRegistrationFormPage setHobbies(String value) {
+        hobbiesWrapper.$(byText(value)).click();
+        return this;
+    }
+
+    public StudentRegistrationFormPage setPhoto(String value) {
+        uploadPicture.uploadFromClasspath(value);
+        return this;
+    }
+
+    public StudentRegistrationFormPage setAddress(String value) {
+        currentAddress.setValue(value);
+        return this;
+    }
+
+    public StudentRegistrationFormPage setState(String value) {
+        stateField.click();
+        stateCityWrapper.$(byText(value)).click();
+        return this;
+    }
+
+    public StudentRegistrationFormPage setCity(String value) {
+        cityField.click();
+        stateCityWrapper.$(byText(value)).click();
         return this;
     }
 

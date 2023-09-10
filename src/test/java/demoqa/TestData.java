@@ -1,26 +1,28 @@
 package demoqa;
 
 import com.github.javafaker.Faker;
+import demoqa.utils.RandomUtils;
 
 import static demoqa.utils.RandomUtils.*;
 
 
 public class TestData {
-    static Faker faker = new Faker();
-    public static String
+    Faker faker = new Faker();
+    RandomUtils randomUtils = new RandomUtils();
+    public String
             firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
-            gender = getRandomGender(),
+            gender = randomUtils.getRandomGender(),
             number = faker.numerify("##########"),
-            month = getRandomMonth(),
-            year = getRandomYear(),
-            day = getRandomDay(month),
-            subjects = getRandomSubject(),
-            hobbies = getRandomHobie(),
+            month = randomUtils.getRandomMonth(),
+            year = randomUtils.getRandomYear(),
+            day = randomUtils.getRandomDay(month),
+            subjects = randomUtils.getRandomSubject(),
+            hobbies = randomUtils.getRandomHobie(),
             photo = "photo_1.png",
             address = faker.address().fullAddress(),
-            selectState = getRandomState(),
-            selectCity = getRandomCity(selectState);
+            selectState = randomUtils.getRandomState(),
+            selectCity = randomUtils.getRandomCity(selectState);
 }
 

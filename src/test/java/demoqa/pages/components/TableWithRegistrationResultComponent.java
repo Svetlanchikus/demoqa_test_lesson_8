@@ -34,52 +34,99 @@ public class TableWithRegistrationResultComponent {
         return this;
     }
 
-    public TableWithRegistrationResultComponent checkResultRequiredFields(String firstName,
-                                                                          String lastName,
-                                                                          String gender,
-                                                                          String number,
-                                                                          String day,
-                                                                          String month,
-                                                                          String year) {
-        lineStudentName.shouldHave(text(firstName + " " + lastName));
-        lineStudentEmail.shouldBe(empty);
-        lineGender.shouldHave(text(gender));
-        lineMobile.shouldHave(text(number));
-        lineDateBirth.shouldHave(text(day + " " + month + "," + year));
-        lineSubjects.shouldBe(empty);
-        lineHobbies.shouldBe(empty);
-        linePicture.shouldBe(empty);
-        lineAddress.shouldBe(empty);
-        lineStateAndCity.shouldBe(empty);
+    public TableWithRegistrationResultComponent checkValueName(String valueFirstName, String valueLastName) {
+        lineStudentName.shouldHave(text(valueFirstName + " " + valueLastName));
 
         return this;
     }
 
-    public TableWithRegistrationResultComponent checkResultAllFields(String firstName,
-                                                                     String lastName,
-                                                                     String email,
-                                                                     String gender,
-                                                                     String number,
-                                                                     String day,
-                                                                     String month,
-                                                                     String year,
-                                                                     String subjects,
-                                                                     String hobbies,
-                                                                     String photo,
-                                                                     String address,
-                                                                     String selectState,
-                                                                     String selectCity) {
-        tableHeader.shouldHave(text("Thanks for submitting the form"));
-        lineStudentName.shouldHave(text(firstName + " " + lastName));
-        lineStudentEmail.shouldHave(text(email));
-        lineGender.shouldHave(text(gender));
-        lineMobile.shouldHave(text(number));
-        lineDateBirth.shouldHave(text(day + " " + month + "," + year));
-        lineSubjects.shouldHave(text(subjects));
-        lineHobbies.shouldHave(text(hobbies));
-        linePicture.shouldHave(text(photo));
-        lineAddress.shouldHave(text(address));
-        lineStateAndCity.shouldHave(text(selectState + " " + selectCity));
+    public TableWithRegistrationResultComponent checkValueEmail(String value) {
+        lineStudentEmail.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueGender(String value) {
+        lineGender.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueNumber(String value) {
+        lineMobile.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueBirthDate(String valueDay,
+                                                                    String valueMonth,
+                                                                    String valueYear) {
+        lineDateBirth.shouldHave(text(valueDay + " " + valueMonth + "," + valueYear));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueSubjects(String value) {
+        lineSubjects.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueHobbies(String value) {
+        lineHobbies.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValuePhoto(String value) {
+        linePicture.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueAddress(String value) {
+        lineAddress.shouldHave(text(value));
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueStateAndCity(String valueState, String valueCity) {
+        lineStateAndCity.shouldHave(text(valueState + " " + valueCity));
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptyEmail() {
+        lineStudentEmail.shouldBe(empty);
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptySubjects() {
+        lineSubjects.shouldBe(empty);
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptyHobbies() {
+        lineHobbies.shouldBe(empty);
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptyPhoto() {
+        linePicture.shouldBe(empty);
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptyAddress() {
+        lineAddress.shouldBe(empty);
+
+        return this;
+    }
+
+    public TableWithRegistrationResultComponent checkValueEmptyStateAndCity() {
+        lineStateAndCity.shouldBe(empty);
 
         return this;
     }
